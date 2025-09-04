@@ -1,7 +1,7 @@
 {
   "version": "1.0",
   "title": "Chess.com Profile",
-  "description": "Display your Chess.com profile with ratings and challenge button using a simple shortcode",
+  "description": "Display your Chess.com profile with ratings and challenge button using a simple shortcode. Created by Matt Langford (@mtt on Micro.blog).",
   "includes": ["/chess-profile.css"],
   "fields": [
     {
