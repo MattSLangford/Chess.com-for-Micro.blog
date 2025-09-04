@@ -34,15 +34,6 @@
         </div>
       </div>
       
-      {{- if $playerData.joined -}}
-        <div class="chess-meta">
-          <p class="chess-joined">Joined {{ dateFormat "January 2006" (time.Unix (int $playerData.joined) 0) }}</p>
-          {{- if $playerData.last_online -}}
-            <p class="chess-last-online">Last seen {{ dateFormat "Jan 2, 2006" (time.Unix (int $playerData.last_online) 0) }}</p>
-          {{- end -}}
-        </div>
-      {{- end -}}
-      
       {{- if $statsData -}}
         <div class="chess-ratings">
           <h4>Current Ratings</h4>
