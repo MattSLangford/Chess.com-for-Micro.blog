@@ -1,0 +1,81 @@
+{{- $username := .Get "username" | default site.Params.chess_username -}}
+{{- $challengeText := site.Params.challenge_text | default "Challenge me on Chess.com" -}}
+
+{{- if $username -}}
+  {{- $playerUrl := printf "https://api.chess.com/pub/player/%s" $username -}}
+  {{- $statsUrl := printf "https://api.chess.com/pub/player/%s/stats" $username -}}
+  
+  {{- $playerData := getJSON $playerUrl -}}
+  {{- $statsData := getJSON $statsUrl -}}
+  
+  {{- if $playerData -}}
+    <div class="chess-profile">
+      <div class="chess-profile-header">
+        {{- if $playerData.avatar -}}
+          <img src="{{ $playerData.avatar }}" alt="{{ $playerData.username }} avatar" class="chess-avatar">
+        {{- end -}}
+        <div class="chess-info">
+          <h3 class="chess-name">
+            {{ $playerData.name | default $playerData.username }}
+            {{- if $playerData.title -}}
+              <span class="chess-title">{{ $playerData.title }}</span>
+            {{- end -}}
+          </h3>
+          <p class="chess-username">@{{ $playerData.username }}</p>
+          {{- if $playerData.location -}}
+            <p class="chess-location">{{ $playerData.location }}</p>
+          {{- end -}}
+        </div>
+      </div>
+      
+      {{- if $statsData -}}
+        <div class="chess-ratings">
+          <h4>Current Ratings</h4>
+          <div class="chess-ratings-grid">
+            {{- if $statsData.chess_rapid -}}
+              <div class="chess-rating">
+                <span class="rating-type">Rapid</span>
+                <span class="rating-value">{{ $statsData.chess_rapid.last.rating }}</span>
+              </div>
+            {{- end -}}
+            {{- if $statsData.chess_blitz -}}
+              <div class="chess-rating">
+                <span class="rating-type">Blitz</span>
+                <span class="rating-value">{{ $statsData.chess_blitz.last.rating }}</span>
+              </div>
+            {{- end -}}
+            {{- if $statsData.chess_bullet -}}
+              <div class="chess-rating">
+                <span class="rating-type">Bullet</span>
+                <span class="rating-value">{{ $statsData.chess_bullet.last.rating }}</span>
+              </div>
+            {{- end -}}
+            {{- if $statsData.chess_daily -}}
+              <div class="chess-rating">
+                <span class="rating-type">Daily</span>
+                <span class="rating-value">{{ $statsData.chess_daily.last.rating }}</span>
+              </div>
+            {{- end -}}
+          </div>
+        </div>
+      {{- end -}}
+      
+      <div class="chess-actions">
+        <a href="https://www.chess.com/play/online/new?opponent={{ $username }}" 
+           target="_blank" 
+           rel="noopener" 
+           class="chess-challenge-btn">
+          {{ $challengeText }}
+        </a>
+      </div>
+    </div>
+  {{- else -}}
+    <div class="chess-profile-error">
+      <p>Unable to load Chess.com profile for "{{ $username }}". Please check the username.</p>
+    </div>
+  {{- end -}}
+{{- else -}}
+  <div class="chess-profile-error">
+    <p>No Chess.com username configured. Please add your username in the plugin settings.</p>
+  </div>
+{{- end -}}

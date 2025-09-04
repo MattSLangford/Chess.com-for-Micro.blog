@@ -1,0 +1,155 @@
+.chess-profile {
+  border: 2px solid #000;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  max-width: 400px;
+}
+
+.chess-profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.chess-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid #000;
+  flex-shrink: 0;
+}
+
+.chess-info {
+  flex: 1;
+}
+
+.chess-name {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chess-title {
+  background-color: #000;
+  color: #fff;
+  padding: 2px 6px;
+  font-size: 12px;
+  border-radius: 3px;
+  font-weight: normal;
+}
+
+.chess-username {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.chess-location {
+  margin: 0;
+  font-size: 12px;
+  color: #999;
+}
+
+.chess-ratings {
+  margin-bottom: 20px;
+}
+
+.chess-ratings h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+  color: #000;
+  border-bottom: 1px solid #000;
+  padding-bottom: 5px;
+}
+
+.chess-ratings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.chess-rating {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.rating-type {
+  font-size: 14px;
+  color: #333;
+  font-weight: 500;
+}
+
+.rating-value {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+}
+
+.chess-actions {
+  text-align: center;
+}
+
+.chess-challenge-btn {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.chess-challenge-btn:hover {
+  background-color: #333;
+  color: #fff;
+  text-decoration: none;
+}
+
+.chess-profile-error {
+  border: 2px solid #000;
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+  max-width: 400px;
+}
+
+.chess-profile-error p {
+  margin: 0;
+  color: #000;
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .chess-profile {
+    max-width: 100%;
+    padding: 15px;
+  }
+  
+  .chess-profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .chess-ratings-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .chess-challenge-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}

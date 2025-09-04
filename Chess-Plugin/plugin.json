@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "title": "Chess.com Profile",
+  "description": "Display your Chess.com profile with ratings and challenge button using a simple shortcode",
+  "includes": ["/chess-profile.css"],
+  "fields": [
+    {
+      "field": "params.chess_username",
+      "label": "Chess.com Username",
+      "type": "string"
+    },
+    {
+      "field": "params.challenge_text",
+      "label": "Challenge Button Text",
+      "type": "string",
+      "default": "Challenge me on Chess.com"
+    }
+  ]
+}
