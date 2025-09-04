@@ -6,7 +6,7 @@ A simple Micro.blog plugin that displays your Chess.com profile with ratings and
 
 Displays your Chess.com avatar, username, title, current ratings, and a customizable challenge button.
 
-![Chess.com Profile Plugin Screenshot](screenshot.png)
+![Chess.com Profile Plugin Logo](logo.png)
 
 ## Installation
 
@@ -15,6 +15,8 @@ Install from the Micro.blog plugins page.
 ## Configuration
 
 The plugin requires your Chess.com username and optionally allows you to customize the challenge button text.
+
+![Chess.com Profile Plugin Screenshot](sample.png)
 
 ## Usage
 
