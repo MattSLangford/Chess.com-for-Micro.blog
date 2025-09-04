@@ -22,11 +22,26 @@
             {{- end -}}
           </h3>
           <p class="chess-username">@{{ $playerData.username }}</p>
+          {{- if $playerData.country -}}
+            <p class="chess-country">{{ $playerData.country }}</p>
+          {{- end -}}
           {{- if $playerData.location -}}
             <p class="chess-location">{{ $playerData.location }}</p>
           {{- end -}}
+          {{- if $playerData.followers -}}
+            <p class="chess-followers">{{ $playerData.followers }} followers</p>
+          {{- end -}}
         </div>
       </div>
+      
+      {{- if $playerData.joined -}}
+        <div class="chess-meta">
+          <p class="chess-joined">Joined {{ dateFormat "January 2006" (time $playerData.joined) }}</p>
+          {{- if $playerData.last_online -}}
+            <p class="chess-last-online">Last seen {{ dateFormat "Jan 2, 2006" (time $playerData.last_online) }}</p>
+          {{- end -}}
+        </div>
+      {{- end -}}
       
       {{- if $statsData -}}
         <div class="chess-ratings">
