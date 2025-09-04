@@ -36,9 +36,9 @@
       
       {{- if $playerData.joined -}}
         <div class="chess-meta">
-          <p class="chess-joined">Joined {{ dateFormat "January 2006" (int $playerData.joined | time.Unix) }}</p>
+          <p class="chess-joined">Joined {{ dateFormat "January 2006" (time.Unix (int $playerData.joined) 0) }}</p>
           {{- if $playerData.last_online -}}
-            <p class="chess-last-online">Last seen {{ dateFormat "Jan 2, 2006" (int $playerData.last_online | time.Unix) }}</p>
+            <p class="chess-last-online">Last seen {{ dateFormat "Jan 2, 2006" (time.Unix (int $playerData.last_online) 0) }}</p>
           {{- end -}}
         </div>
       {{- end -}}
