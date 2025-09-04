@@ -30,68 +30,33 @@
   text-align: center;
 }
 
-.chess-name {
-  margin: 0 0 5px 0;
-  font-size: 18px;
+.chess-username {
+  margin: 0 0 10px 0;
+  font-size: 24px;
   font-weight: bold;
   color: #000;
   display: flex;
   align-items: center;
-  gap: 8px;
+  justify-content: center;
+  gap: 12px;
 }
 
 .chess-title {
   background-color: #000;
   color: #fff;
-  padding: 2px 6px;
-  font-size: 12px;
-  border-radius: 3px;
+  padding: 4px 8px;
+  font-size: 14px;
+  border-radius: 4px;
   font-weight: normal;
 }
 
-.chess-username {
-  margin: 0 0 5px 0;
+.chess-location {
+  margin: 0;
   font-size: 14px;
   color: #666;
+  font-style: italic;
 }
 
-.chess-country {
-  margin: 0 0 5px 0;
-  font-size: 12px;
-  color: #666;
-  font-weight: 500;
-}
-
-.chess-location {
-  margin: 0 0 5px 0;
-  font-size: 12px;
-  color: #999;
-}
-
-.chess-followers {
-  margin: 0;
-  font-size: 12px;
-  color: #666;
-  font-weight: 500;
-}
-
-.chess-meta {
-  margin-bottom: 20px;
-  padding: 15px;
-  background-color: #f9f9f9;
-  border-radius: 4px;
-  text-align: center;
-}
-
-.chess-joined, .chess-last-online {
-  margin: 0 0 5px 0;
-  font-size: 12px;
-  color: #666;
-}
-
-.chess-last-online {
-  margin: 0;
-}
 
 .chess-ratings {
   margin-bottom: 20px;

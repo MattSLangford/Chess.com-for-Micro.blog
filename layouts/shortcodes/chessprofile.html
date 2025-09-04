@@ -15,21 +15,14 @@
           <img src="{{ $playerData.avatar }}" alt="{{ $playerData.username }} avatar" class="chess-avatar">
         {{- end -}}
         <div class="chess-info">
-          <h3 class="chess-name">
-            {{ $playerData.name | default $playerData.username }}
+          <h2 class="chess-username">
+            @{{ $playerData.username }}
             {{- if $playerData.title -}}
               <span class="chess-title">{{ $playerData.title }}</span>
             {{- end -}}
-          </h3>
-          <p class="chess-username">@{{ $playerData.username }}</p>
-          {{- if $playerData.country -}}
-            <p class="chess-country">{{ $playerData.country }}</p>
-          {{- end -}}
+          </h2>
           {{- if $playerData.location -}}
             <p class="chess-location">{{ $playerData.location }}</p>
-          {{- end -}}
-          {{- if $playerData.followers -}}
-            <p class="chess-followers">{{ $playerData.followers }} followers</p>
           {{- end -}}
         </div>
       </div>
